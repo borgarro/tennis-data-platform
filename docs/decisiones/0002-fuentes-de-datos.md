@@ -1,6 +1,6 @@
 # ADR-0002: Fuentes de datos
 
-- **Estado:** Aceptada
+- **Estado:** Sustituida por [ADR-0004](0004-fuentes-de-datos-revisadas.md) (TML dejó de actualizarse en enero de 2026)
 - **Fecha:** 2026-09-25
 
 ## Contexto

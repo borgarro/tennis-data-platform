@@ -16,7 +16,7 @@ of Grand Slams.
 ## Architecture (Phase 1)
 
 ```
-TML-Database / tennis-data.co.uk
+Sackmann archive (history) / tennis-data.co.uk (live results + odds)
         │  Python ingestion (orchestrated by Airflow, Docker)
         ▼
 Databricks Volume (raw) ──Auto Loader──► BRONZE ──PySpark──► SILVER ──dbt──► GOLD
@@ -45,6 +45,7 @@ Databricks Volume (raw) ──Auto Loader──► BRONZE ──PySpark──►
 ```
 src/tennis_platform/   Python package (ingestion, Elo, ML, simulation)
 tests/                 Unit tests
+notebooks/             Exploratory data analysis (DuckDB)
 docs/                  Architecture, data dictionary, decision records (ADRs)
 ```
 
@@ -63,10 +64,14 @@ uv run pytest                    # run tests
 
 ## Data & attribution
 
-Tennis data by **Jeff Sackmann** and the **TML-Database** project, licensed under
-[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). Betting odds from
-[tennis-data.co.uk](http://www.tennis-data.co.uk/). Data is downloaded at runtime and is not
-stored in this repository. Non-commercial use only.
+Tennis data by **Jeff Sackmann** ([Tennis Abstract](https://www.tennisabstract.com/)), via the
+[tennis-sackmann-archive](https://github.com/Aneeshers/tennis-sackmann-archive) mirror, licensed
+under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). Results and betting
+odds from [tennis-data.co.uk](http://www.tennis-data.co.uk/). Data is downloaded at runtime and is
+not stored in this repository. Non-commercial use only.
+
+Data profiling and source evaluation: [`notebooks/02_eda.ipynb`](notebooks/02_eda.ipynb) ·
+[data dictionary](docs/data_dictionary.md).
 
 ## License
 
