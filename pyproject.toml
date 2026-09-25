@@ -16,6 +16,9 @@ build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
+    "duckdb>=1.5.5",
+    "ipykernel>=7.3.0",
+    "pandas>=3.0.6",
     "pre-commit>=4.6.2",
     "pytest>=9.1.1",
     "ruff>=0.16.9",
@@ -36,6 +39,10 @@ select = [
     "UP",  # pyupgrade (modern Python syntax)
     "SIM", # flake8-simplify
 ]
+
+[tool.ruff.lint.per-file-ignores]
+# Exploratory notebooks embed long SQL strings that read better unwrapped
+"notebooks/*.ipynb" = ["E501"]
 
 # --- Tests ------------------------------------------------------------------
 [tool.pytest.ini_options]
