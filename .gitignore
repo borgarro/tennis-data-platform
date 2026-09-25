@@ -1,0 +1,21 @@
+# --- Secrets: never commit ---
+.env
+.env.*
+!.env.example
+.databrickscfg
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# --- Local data (downloaded sources are re-creatable) ---
+data/
+
+# --- Editors / OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
